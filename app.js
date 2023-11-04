@@ -34,14 +34,17 @@ btn.forEach((e)=>{
         li.append(img)
         ul.append(li);
         inp.value=""
-    }
+    } if(ul.childElementCount===0){
+        list.style.display="none"
+        ul.style.display="none"
+     }
 })
 })
 
 x.addEventListener("click",()=>{
    inp.value=""
     })  
-
+''
 z.addEventListener("click",()=>{
     r.style.display="block"
     z.style.display="none"
