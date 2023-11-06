@@ -9,7 +9,7 @@ let inp=document.querySelector("input")
 btn.forEach((e)=>{
     e.addEventListener("click",()=>{
         let li=document.createElement("li");
-    let lr=inp.value;
+    let lr=inp.value.trim();
    
     if(lr!==""){
         ul.style.display="block"
@@ -30,21 +30,24 @@ btn.forEach((e)=>{
         img.addEventListener("click",(e)=>{
             e.preventDefault()
             e.target.parentElement.remove();
+            if(ul.childElementCount===0){
+                list.style.display="none"
+                ul.style.display="none"
+             }
             })            
         li.append(img)
         ul.append(li);
         inp.value=""
-    } if(ul.childElementCount===0){
-        list.style.display="none"
-        ul.style.display="none"
-     }
+    } 
 })
+if(ul.childElementCount!==0){
+    list.style.display="block"
+    ul.style.display="block"
+ }
 })
-
 x.addEventListener("click",()=>{
    inp.value=""
     })  
-''
 z.addEventListener("click",()=>{
     r.style.display="block"
     z.style.display="none"
@@ -75,6 +78,10 @@ let childrenUL = [...ul.children]
         img.addEventListener("click",(e)=>{
             e.preventDefault()
             e.target.parentElement.remove();
+            if(ul.childElementCount===0){
+                list.style.display="none"
+                ul.style.display="none"
+             }
             })            
         li1.append(img)
         ul.append(li1)
@@ -112,6 +119,10 @@ r.addEventListener("click",()=>{
         img.addEventListener("click",(e)=>{
             e.preventDefault()
             e.target.parentElement.remove();
+            if(ul.childElementCount===0){
+                list.style.display="none"
+                ul.style.display="none"
+             }
             })            
         li2.append(img)
         ul.append(li2)
